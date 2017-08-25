@@ -13,14 +13,23 @@ namespace DevUCSharpCS_ASP_020
         {
             if (!Page.IsPostBack)
             {
-                ViewState.Add("MyValue", "Bob");
+                ViewState.Add("MyValue", "");
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //takes whatever is already stored in MyValue
             string value = ViewState["MyValue"].ToString();
+            //adds whatever is in the valueTextBox and a space
+            value += valueTextBox.Text + " ";
+            //sets the new value of.. uh value to MyValue
+            ViewState["MyValue"] = value;
+            //outputs the new value to the resultLabel
             resultLabel.Text = value;
+
+            //clears the valueTextBox
+            valueTextBox.Text = "";
         }
     }
 }
