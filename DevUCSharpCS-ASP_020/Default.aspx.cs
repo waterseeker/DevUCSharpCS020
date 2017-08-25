@@ -13,5 +13,10 @@ namespace DevUCSharpCS_ASP_020
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
